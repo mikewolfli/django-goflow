@@ -1,0 +1,28 @@
+{% extends "goflow/base_site.html" %}
+{% load i18n admin_modify staticfiles %}
+{% block extrastyle %}
+<link rel="stylesheet" type="text/css" href="{% static 'admin/css/forms.css'%}" />
+{% endblock %}
+
+
+{% block extrahead %}{{ block.super }}
+<script type="text/javascript" src="../admin/jsi18n/"></script>
+<script type="text/javascript" src="{% static 'admin/js/core.js'%}"></script>
+<script type="text/javascript" src="{% static 'admin/js/admin/RelatedObjectLookups.js'%}"></script>
+<script type="text/javascript" src="{% static 'admin/js/calendar.js'%}"></script>
+<script type="text/javascript" src="{% static 'admin/js/admin/DateTimeShortcuts.js'%}"></script>
+{% endblock %}
+
+{% block content %}
+<h1>Start application: new leave request</h1>
+
+
+<form method="post">
+<table>
+{{ form }}
+</table>
+<input type="submit" name="{{submit_name}}" value="{{ok_value}}">
+<input type="submit" name="{{submit_name}}" value="{{cancel_value}}">
+</form>
+
+{% endblock %}
